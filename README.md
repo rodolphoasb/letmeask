@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Letmeask" src=".github/logo.svg" width="160px">
+  <img alt="Letmeask" src="https://user-images.githubusercontent.com/8127858/139138716-9223ca5f-effe-47fe-928c-90c73648e3d6.png" width="160px">
 </p>
 
 <p align="center">
@@ -9,10 +9,6 @@
 
   <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
 </p>
-
-<h1 align="center">
-    <img alt="Letmeask" src=".github/cover.svg" />
-</h1>
 
 <br>
 
