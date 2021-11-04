@@ -33,7 +33,6 @@ export function Room() {
   const [title, setTitle] = useState("")
 
   const roomId = params.id
-
   useEffect(() => {
     const roomRef = ref(database, `rooms/${roomId}/questions`)
 
@@ -43,19 +42,21 @@ export function Room() {
     })
 
     onValue(roomRef, (snapshot) => {
-      const data: [string, valueType][] = Object.entries(snapshot.val())
+      if (snapshot.val() !== null) {
+        const data: [string, valueType][] = Object.entries(snapshot.val())
 
-      const parsedQuestions = data.map(([key, value]) => {
-        return {
-          id: key,
-          content: value.content,
-          author: value.author,
-          ishighlighted: value.ishighlighted,
-          isAnswered: value.isAnswered,
-        }
-      })
+        const parsedQuestions = data.map(([key, value]) => {
+          return {
+            id: key,
+            content: value.content,
+            author: value.author,
+            ishighlighted: value.ishighlighted,
+            isAnswered: value.isAnswered,
+          }
+        })
 
-      setQuestions(parsedQuestions)
+        setQuestions(parsedQuestions)
+      }
     })
   }, [roomId])
 
